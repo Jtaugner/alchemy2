@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Алхимия 2.0</title>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="#F3D9CB">
+  <meta name="description"
+        content="Алхимия. Игра основана на принципе комбинирования элементов, с возможностью создания новых предметов и процессов. ">
+  <meta name="theme-color" content="#F3D9CB">
+  <!--Стили-->
+  <!-- Yandex.Metrika counter -->
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(57413806, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/57413806" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+  <!-- /Yandex.Metrika counter -->
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="images/poison.png" type="image/x-icon">
+  <link rel="manifest" href="yandex-manifest.json">
+  <script src="https://yandex.ru/games/sdk/v2"></script>
+</head>
+<body>
+<div class="table">
+  <div class="blackout2 none"></div>
+  <div class="topMenu OldOak">
+    <div class="got">
+      <div class="gotEl"></div>
+      <div class="tipGot transButton none">Ближайший элемент</div>
+    </div>
+    <div class="infoWrapper">
+      <div class="info"><p class="infoQ">?</p></div>
+    </div>
+
+    <div class="gottenElements">
+      <div class="gottenElements2"></div>
+      <div class="tipGot transButton none">Получено элементов</div>
+    </div>
+  </div>
+  <div class="menu">
+    <div class="recipeButton"></div>
+    <div class="add"></div>
+    <div class="drop"></div>
+  </div>
+  <div class="rules none">
+    <div class="close">х</div>
+    <h2 class="OldOak">Правила</h2>
+    <ul>
+      <li>Задача игры Алхимия - создавать элементы. В начале вы получаете 4 элемента, различные комбинации которых
+        создают новые.</li>
+      <li>Чтобы создать элемент нужно перетащить один на другой.</li>
+      <li>Нажав на плюс, вы можете добавить на стол элементы
+        из своих рецептов.</li>
+      <li>Двойной клик по элементу создаст его копию.</li>
+      <li>Перетащив ненужный элемент в сундук, вы удалите его с экрана. А нажав на него, удалятся все элементы на
+        экране.</li>
+      <li>Вот и всё, удачной игры!</li>
+    </ul>
+    <button class="delete transButton" id="delete">Сбросить прогресс</button>
+    <div class="blackout none"></div>
+    <div class="caution none">
+        <p class="OldOak">Вы уверены, что хотите сбросить прогресс?</p>
+      <div class="buttons">
+      <button id="notDelete" class="transButton">Нет! Вернуться</button>
+      <button class="delete" id="deleteCertain">Сбросить прогресс</button>
+      </div>
+    </div>
+  </div>
+  <div class="recipes none">
+    <div class="buttonsRecipe">
+      <div class="closeRules">х</div>
+    </div>
+
+    <h2  class="OldOak">Рецепты</h2>
+    <div class="blackout3 none"></div>
+    <div class="getElement none"></div>
+  </div>
+  <div class="icons none">
+    <div class="icons-flex">
+      <div class="advert" id="advert"></div>
+      <div class="close">х</div>
+
+    </div>
+
+    <h2 class="OldOak">Элементы</h2>
+    <div class="iconsHead">
+      <input type="text" placeholder="Поиск" class="transButton">
+      <button class="addIcons transButton">Добавить</button>
+    </div>
+  </div>
+  <div class="blackoutAdvert none"></div>
+  <div class="advertRecipe none"></div>
+
+</div>
+<script>let ysdkGame;</script>
+<script src="main.js"></script>
+<script src="sw.js"></script>
+<script>
+  if('serviceWorker' in navigator && !(ysdkGame && ysdkGame.yandexApp && ysdkGame.yandexApp.enabled)){
+    navigator.serviceWorker
+            .register('sw.js')
+            .then(function(reg) {
+              console.log('Registration succeeded. Scope is ' + reg.scope);
+            })
+            .catch(function(error) {
+              console.error('Trouble with sw: ', error);
+            });
+  }
+</script>
+
+
+</body>
+</html>
