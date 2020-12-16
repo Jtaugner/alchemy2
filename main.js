@@ -869,6 +869,7 @@ window.onload = function(){
                             setTimeout(()=>{
                                 advertElement.classList.remove('none');
                                 advTime = true;
+                                console.log('adv tue');
                             }, 200000);
                         }
                     }
